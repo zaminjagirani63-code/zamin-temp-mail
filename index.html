@@ -5,592 +5,548 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#f8f9fc">
-<meta name="description" content="ZAMIN TEMP MAIL - Free temporary email generator. Receive verification emails and OTP codes instantly.">
+<meta name="description" content="ZAMIN TEMP MAIL - Free temporary email generator.">
 <title>ZAMIN TEMP MAIL - Free Temporary Email</title>
 
 <style>
 :root{
-  --primary:#635bdb;
-  --primary-dark:#5148c8;
-  --text:#20243a;
-  --muted:#81879b;
-  --border:#e9eaf1;
-  --surface:#ffffff;
-  --bg:#f8f9fc;
-  --green:#159b70;
-  --shadow:0 12px 40px rgba(35,42,85,.055);
+--primary:#635bdb;--dark:#5148c8;--text:#20243a;
+--muted:#81879b;--border:#e9eaf1;--bg:#f8f9fc;
+--green:#159b70;--shadow:0 12px 40px rgba(35,42,85,.055)
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-}
+body{margin:0;background:var(--bg);color:var(--text);
+font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
 button,a{-webkit-tap-highlight-color:transparent}
-button{font-family:inherit}
+button{font-family:inherit;cursor:pointer}
 a{color:inherit}
-.topbar{
-  height:72px;
-  background:#fff;
-  border-bottom:1px solid var(--border);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 max(calc((100% - 1120px)/2),22px);
-  position:sticky;
-  top:0;
-  z-index:10;
-}
-.brand{
-  display:flex;
-  align-items:center;
-  gap:11px;
-  text-decoration:none;
-}
-.brand-mark{
-  width:39px;height:39px;
-  display:grid;place-items:center;
-  border-radius:12px;
-  color:white;
-  background:linear-gradient(145deg,#8178f4,#5148c8);
-  box-shadow:0 5px 14px #635bdb35;
-}
+.topbar{height:72px;background:#fff;border-bottom:1px solid var(--border);
+display:flex;align-items:center;justify-content:space-between;
+padding:0 max(calc((100% - 1120px)/2),22px);position:sticky;top:0;z-index:10}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+.brand-mark{width:39px;height:39px;display:grid;place-items:center;
+border-radius:12px;color:white;background:linear-gradient(145deg,#8178f4,#5148c8)}
 .brand-name{font-size:17px;font-weight:850;letter-spacing:-.5px}
 .brand-name span{color:var(--primary)}
 .nav{display:flex;align-items:center;gap:28px}
-.nav a{
-  font-size:13px;
-  font-weight:650;
-  color:#666d82;
-  text-decoration:none;
-  transition:.2s;
-}
+.nav a{font-size:13px;font-weight:650;color:#666d82;text-decoration:none}
 .nav a:hover{color:var(--primary)}
-.nav .nav-join{
-  background:#f0efff;
-  color:var(--primary);
-  padding:10px 15px;
-  border-radius:9px;
-}
+.nav .nav-join{background:#f0efff;color:var(--primary);padding:10px 15px;border-radius:9px}
 .wrap{width:min(100% - 36px,920px);margin:auto}
 .hero{text-align:center;padding:57px 15px 27px}
-.eyebrow{
-  display:inline-flex;align-items:center;gap:7px;
-  color:var(--primary);
-  background:#f0efff;
-  padding:7px 12px;
-  border-radius:30px;
-  font-size:11px;font-weight:800;
-  letter-spacing:.5px;
-}
-.dot{
-  width:7px;height:7px;border-radius:50%;
-  background:#27b985;
-  box-shadow:0 0 0 4px #27b98520;
-}
-.hero h1{
-  font-size:clamp(31px,5vw,46px);
-  line-height:1.15;
-  letter-spacing:-1.8px;
-  margin:19px 0 13px;
-  color:#222640;
-}
-.hero h1 span{
-  color:var(--primary);
-}
-.hero p{
-  max-width:570px;
-  margin:auto;
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.8;
-}
-.generator{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:19px;
-  box-shadow:var(--shadow);
-  padding:26px;
-  margin:10px auto 23px;
-}
-.panel-top{
-  display:flex;justify-content:space-between;align-items:center;
-  gap:12px;margin-bottom:20px;
-}
-.panel-title{display:flex;align-items:center;gap:11px}
-.panel-icon{
-  width:40px;height:40px;
-  display:grid;place-items:center;
-  border-radius:12px;
-  background:#f0efff;color:var(--primary);
-}
-.panel-title h2{font-size:16px;margin:0;font-weight:800}
-.panel-title p{font-size:11px;color:var(--muted);margin:4px 0 0}
-.live{
-  display:flex;align-items:center;gap:7px;
-  font-size:11px;color:var(--green);font-weight:750;
-  background:#eaf9f3;padding:8px 11px;border-radius:30px;
-}
-.mailbox{
-  background:linear-gradient(120deg,#f8f7ff,#f7f9ff);
-  border:1px solid #e8e6fa;
-  border-radius:14px;
-  padding:20px;
-}
-.mail-label{
-  color:#858ba0;font-size:10px;font-weight:800;
-  letter-spacing:1px;margin-bottom:12px;
-}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;color:var(--primary);
+background:#f0efff;padding:7px 12px;border-radius:30px;font-size:11px;font-weight:800}
+.dot{width:7px;height:7px;border-radius:50%;background:#27b985;box-shadow:0 0 0 4px #27b98520}
+.hero h1{font-size:clamp(31px,5vw,46px);line-height:1.15;letter-spacing:-1.8px;margin:19px 0 13px}
+.hero h1 span{color:var(--primary)}
+.hero p{max-width:570px;margin:auto;color:var(--muted);font-size:14px;line-height:1.8}
+.generator,.section{background:white;border:1px solid var(--border);
+border-radius:17px;padding:23px;margin-bottom:19px;box-shadow:var(--shadow)}
+.generator{border-radius:19px;padding:26px;margin:10px auto 23px}
+.panel-top,.section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px}
+.panel-title,.section-heading{display:flex;align-items:center;gap:11px}
+.panel-icon,.heading-icon{width:40px;height:40px;display:grid;place-items:center;
+border-radius:12px;background:#f0efff;color:var(--primary)}
+.section-heading h2,.panel-title h2{font-size:16px;margin:0;font-weight:800}
+.panel-title p,.section-heading p{font-size:11px;color:var(--muted);margin:4px 0 0}
+.live{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--green);
+font-weight:750;background:#eaf9f3;padding:8px 11px;border-radius:30px}
+.mailbox{background:linear-gradient(120deg,#f8f7ff,#f7f9ff);
+border:1px solid #e8e6fa;border-radius:14px;padding:20px}
+.mail-label{color:#858ba0;font-size:10px;font-weight:800;letter-spacing:1px;margin-bottom:12px}
 .mail-line{display:flex;align-items:center;gap:12px}
-#email{
-  flex:1;min-width:0;
-  color:#5148c8;
-  font-size:clamp(15px,3vw,20px);
-  font-weight:800;
-  overflow-wrap:anywhere;
-  line-height:1.5;
-}
-.btn{
-  border:0;border-radius:10px;
-  padding:12px 16px;
-  display:inline-flex;align-items:center;justify-content:center;
-  gap:8px;font-size:12px;font-weight:800;
-  cursor:pointer;transition:transform .2s,background .2s,box-shadow .2s;
-}
+#email{flex:1;min-width:0;color:#5148c8;font-size:clamp(15px,3vw,20px);
+font-weight:800;overflow-wrap:anywhere;line-height:1.5}
+.btn{border:0;border-radius:10px;padding:12px 16px;display:inline-flex;
+align-items:center;justify-content:center;gap:8px;font-size:12px;font-weight:800;
+transition:transform .2s,background .2s}
 .btn:hover{transform:translateY(-2px)}
-.btn:active{transform:scale(.98)}
-.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.btn:disabled{opacity:.5;cursor:not-allowed}
 .btn-copy{background:#e9e7ff;color:#554bc9;white-space:nowrap}
-.btn-main{
-  color:white;background:linear-gradient(135deg,#746bea,#5148c8);
-  box-shadow:0 5px 13px #635bdb25;
-}
-.btn-main:hover{box-shadow:0 8px 19px #635bdb35}
+.btn-main{color:white;background:linear-gradient(135deg,#746bea,#5148c8);
+box-shadow:0 5px 13px #635bdb25}
 .btn-soft{background:#f0f1f8;color:#555d78}
 .btn-danger{background:#fff0f0;color:#c24c5b}
 .generator-actions{display:flex;gap:11px;margin-top:15px}
 .generator-actions .btn{flex:1;min-height:46px}
-.status-line{
-  display:flex;align-items:center;gap:7px;
-  color:#8990a2;font-size:11px;margin-top:15px;
-  min-height:17px;
-}
-.status-line svg{color:var(--primary)}
-.section{
-  background:white;border:1px solid var(--border);
-  border-radius:17px;padding:23px;
-  margin-bottom:19px;box-shadow:0 5px 22px #22264006;
-}
-.section-head{
-  display:flex;align-items:center;justify-content:space-between;
-  gap:12px;margin-bottom:18px;
-}
-.section-heading{display:flex;align-items:center;gap:10px}
-.section-heading h2{font-size:16px;margin:0;font-weight:850}
-.section-heading p{font-size:11px;color:var(--muted);margin:4px 0 0}
-.heading-icon{
-  width:36px;height:36px;display:grid;place-items:center;
-  border-radius:11px;background:#f0efff;color:var(--primary);
-}
-.count{
-  font-size:11px;font-weight:800;color:var(--primary);
-  background:#f0efff;padding:8px 12px;border-radius:30px;
-}
-.empty{
-  text-align:center;padding:37px 15px;
-  background:#fafbfe;border:1px dashed #e2e5ef;
-  border-radius:12px;color:#9299aa;
-  font-size:12px;line-height:1.9;
-}
-.empty-icon{
-  width:43px;height:43px;margin:0 auto 12px;
-  display:grid;place-items:center;border-radius:13px;
-  background:#f0efff;color:var(--primary);
-}
-.message{
-  display:flex;align-items:center;gap:14px;
-  padding:15px 3px;border-bottom:1px solid #eff0f5;
-}
-.message:last-child{border-bottom:0}
-.message-symbol{
-  width:39px;height:39px;flex:0 0 39px;
-  display:grid;place-items:center;border-radius:12px;
-  color:#635bdb;background:#f0efff;
-}
+.status-line{display:flex;align-items:center;gap:7px;color:#8990a2;
+font-size:11px;margin-top:15px;min-height:17px}
+.heading-icon{width:36px;height:36px}
+.section-heading h2{font-size:16px}
+.count{font-size:11px;font-weight:800;color:var(--primary);
+background:#f0efff;padding:8px 12px;border-radius:30px}
+.empty{text-align:center;padding:37px 15px;background:#fafbfe;
+border:1px dashed #e2e5ef;border-radius:12px;color:#9299aa;font-size:12px;line-height:1.9}
+.message{display:flex;align-items:center;gap:14px;padding:15px 3px;border-bottom:1px solid #eff0f5}
+.message-symbol{width:39px;height:39px;flex:0 0 39px;display:grid;place-items:center;
+border-radius:12px;color:#635bdb;background:#f0efff}
 .message-info{flex:1;min-width:0}
-.message-info strong{
-  display:block;font-size:13px;color:#343950;
-  overflow-wrap:anywhere;
-}
-.message-info small{
-  display:block;color:#9399aa;font-size:11px;
-  margin-top:5px;overflow-wrap:anywhere;
-}
+.message-info strong{display:block;font-size:13px;color:#343950;overflow-wrap:anywhere}
+.message-info small{display:block;color:#9399aa;font-size:11px;margin-top:5px;overflow-wrap:anywhere}
 .message-actions{display:flex;gap:7px}
 .message-actions .btn{padding:9px 12px;font-size:10px}
 .history-list{display:grid;gap:8px}
-.history-item{
-  width:100%;display:flex;justify-content:space-between;
-  align-items:center;gap:12px;text-align:left;
-  background:#fafbfe;border:1px solid #eceef5;
-  color:#4b526b;padding:12px;border-radius:10px;
-  cursor:pointer;font-size:12px;
-}
+.history-item{width:100%;display:flex;justify-content:space-between;align-items:center;
+gap:12px;text-align:left;background:#fafbfe;border:1px solid #eceef5;
+color:#4b526b;padding:12px;border-radius:10px;font-size:12px}
 .history-item.active{background:#f1efff;border-color:#bcb5f4;color:#5148c8}
 .history-item span:first-child{overflow-wrap:anywhere}
 .history-item small{font-size:10px;color:#9096a8;white-space:nowrap}
-.features{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:13px;
-  margin:0 0 20px;
-}
-.feature{
-  background:white;border:1px solid var(--border);
-  border-radius:15px;padding:19px 16px;
-}
-.feature-icon{
-  width:39px;height:39px;display:grid;place-items:center;
-  color:var(--primary);background:#f0efff;
-  border-radius:12px;margin-bottom:13px;
-}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin:0 0 20px}
+.feature{background:white;border:1px solid var(--border);border-radius:15px;padding:19px 16px}
+.feature-icon{width:39px;height:39px;display:grid;place-items:center;color:var(--primary);
+background:#f0efff;border-radius:12px;margin-bottom:13px}
 .feature h3{font-size:13px;margin:0 0 7px}
 .feature p{font-size:11px;color:var(--muted);line-height:1.7;margin:0}
 .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}
-.step{
-  padding:13px 9px;background:#fafbfe;border:1px solid #eff0f5;
-  border-radius:11px;text-align:center;
-}
-.step-number{
-  width:25px;height:25px;margin:0 auto 9px;
-  display:grid;place-items:center;border-radius:8px;
-  background:#eeecff;color:var(--primary);
-  font-size:11px;font-weight:850;
-}
+.step{padding:13px 9px;background:#fafbfe;border:1px solid #eff0f5;border-radius:11px;text-align:center}
+.step-number{width:25px;height:25px;margin:0 auto 9px;display:grid;place-items:center;
+border-radius:8px;background:#eeecff;color:var(--primary);font-size:11px;font-weight:850}
 .step p{font-size:10px;line-height:1.6;color:#70778c;margin:0}
 .faq-item{border-bottom:1px solid #eff0f5}
 .faq-item:last-child{border:0}
-.faq-item summary{
-  padding:15px 0;cursor:pointer;
-  font-size:12px;font-weight:750;color:#394058;
-  list-style:none;display:flex;justify-content:space-between;gap:10px;
-}
+.faq-item summary{padding:15px 0;cursor:pointer;font-size:12px;font-weight:750;
+color:#394058;list-style:none;display:flex;justify-content:space-between;gap:10px}
 .faq-item summary:after{content:"+";color:var(--primary);font-size:17px}
 .faq-item[open] summary:after{content:"−"}
 .faq-item p{font-size:12px;line-height:1.8;color:var(--muted);margin:0 0 15px}
-.telegram{
-  background:linear-gradient(120deg,#f0efff,#f5f8ff);
-  border:1px solid #e5e3fa;border-radius:17px;
-  padding:26px;text-align:center;margin-bottom:25px;
-}
-.telegram-icon{
-  width:48px;height:48px;margin:0 auto 13px;
-  border-radius:15px;background:#e6e4ff;color:var(--primary);
-  display:grid;place-items:center;
-}
+.telegram{background:linear-gradient(120deg,#f0efff,#f5f8ff);
+border:1px solid #e5e3fa;border-radius:17px;padding:26px;text-align:center;margin-bottom:25px}
+.telegram-icon{width:48px;height:48px;margin:0 auto 13px;border-radius:15px;
+background:#e6e4ff;color:var(--primary);display:grid;place-items:center}
 .telegram h2{font-size:17px;margin:0 0 8px}
 .telegram p{font-size:12px;color:var(--muted);line-height:1.7;margin:0 auto 15px;max-width:430px}
-.telegram a{
-  display:inline-flex;align-items:center;gap:8px;
-  background:var(--primary);color:white;
-  text-decoration:none;padding:12px 19px;
-  border-radius:10px;font-size:11px;font-weight:800;
-  transition:.2s;
-}
-.telegram a:hover{background:var(--primary-dark);transform:translateY(-2px)}
-footer{
-  background:#fff;border-top:1px solid var(--border);
-  padding:27px 15px;text-align:center;
-  color:#9298a8;font-size:11px;line-height:2;
-}
+.telegram a{display:inline-flex;align-items:center;gap:8px;background:var(--primary);
+color:white;text-decoration:none;padding:12px 19px;border-radius:10px;font-size:11px;font-weight:800}
+footer{background:#fff;border-top:1px solid var(--border);padding:27px 15px;
+text-align:center;color:#9298a8;font-size:11px;line-height:2}
 footer b{color:#5148c8}
 footer a{color:#635bdb;text-decoration:none;margin:0 8px}
-#modal{
-  display:none;position:fixed;inset:0;z-index:30;
-  background:#15182a99;padding:17px;overflow:auto;
-}
-.modalbox{
-  max-width:650px;margin:6vh auto;background:white;
-  border-radius:17px;padding:22px;
-  box-shadow:0 20px 70px #0003;
-}
+#toast{position:fixed;z-index:9999;bottom:24px;left:50%;
+transform:translate(-50%,18px);opacity:0;pointer-events:none;
+background:#242943;color:white;border-radius:11px;padding:13px 19px;
+font-size:12px;font-weight:750;transition:.25s;max-width:90%;text-align:center}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+#modal{display:none;position:fixed;inset:0;z-index:1000;background:#15182a99;
+padding:17px;overflow:auto}
+.modalbox{max-width:650px;margin:6vh auto;background:white;border-radius:17px;padding:22px}
 .modalhead{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .modalhead h2{font-size:16px;overflow-wrap:anywhere}
-#bodyText{
-  white-space:pre-wrap;overflow-wrap:anywhere;
-  background:#f8f9fc;border:1px solid var(--border);
-  border-radius:11px;padding:16px;
-  font-size:13px;line-height:1.8;
-}
-.otp{color:#5148c8;font-size:21px;font-weight:900}
-#toast{
-  position:fixed;z-index:50;bottom:24px;left:50%;
-  transform:translate(-50%,18px);opacity:0;
-  pointer-events:none;background:#242943;color:white;
-  border:1px solid #ffffff20;border-radius:11px;
-  padding:13px 19px;font-size:12px;font-weight:750;
-  box-shadow:0 10px 35px #0002;transition:.25s;
-  width:max-content;max-width:90%;text-align:center;
-}
-#toast.show{opacity:1;transform:translate(-50%,0)}
+#bodyText{white-space:pre-wrap;overflow-wrap:anywhere;background:#f8f9fc;
+border:1px solid var(--border);border-radius:11px;padding:16px;font-size:13px;line-height:1.8}
 @media(max-width:650px){
-  .topbar{height:64px;padding:0 16px}
-  .brand-name{font-size:15px}
-  .nav{gap:13px}
-  .nav a{font-size:11px}
-  .nav .nav-join{padding:8px}
-  .hero{padding:43px 12px 23px}
-  .wrap{width:calc(100% - 24px)}
-  .generator,.section{padding:17px;border-radius:14px}
-  .panel-top{align-items:flex-start}
-  .mailbox{padding:15px}
-  .mail-line{flex-wrap:wrap}
-  #email{flex-basis:100%}
-  .btn-copy{width:100%}
-  .generator-actions{flex-direction:column}
-  .generator-actions .btn{width:100%}
-  .features{grid-template-columns:1fr}
-  .feature{display:flex;gap:13px;align-items:flex-start}
-  .feature-icon{flex:0 0 39px;margin:0}
-  .steps{grid-template-columns:repeat(2,1fr)}
-  .message{align-items:flex-start}
-  .message-actions{flex-wrap:wrap}
-  .message-actions .btn{padding:9px}
+.topbar{height:64px;padding:0 16px}.brand-name{font-size:15px}
+.nav{gap:13px}.nav a{font-size:11px}.nav .nav-join{padding:8px}
+.hero{padding:43px 12px 23px}.wrap{width:calc(100% - 24px)}
+.generator,.section{padding:17px;border-radius:14px}
+.panel-top{align-items:flex-start}.mailbox{padding:15px}
+.mail-line{flex-wrap:wrap}#email{flex-basis:100%}
+.btn-copy{width:100%}.generator-actions{flex-direction:column}
+.generator-actions .btn{width:100%}.features{grid-template-columns:1fr}
+.feature{display:flex;gap:13px;align-items:flex-start}
+.feature-icon{flex:0 0 39px;margin:0}
+.steps{grid-template-columns:repeat(2,1fr)}
+.message{align-items:flex-start}.message-actions{flex-wrap:wrap}
+.message-actions .btn{padding:9px}
 }
-@media(max-width:390px){
-  .nav{gap:8px}
-  .nav a{font-size:10px}
-  .brand-mark{width:34px;height:34px}
-  .brand-name{font-size:13px}
-  .live{font-size:9px;padding:7px}
-}
+@media(max-width:390px){.nav{gap:8px}.nav a{font-size:10px}
+.brand-mark{width:34px;height:34px}.brand-name{font-size:13px}}
 </style>
 </head>
 
 <body>
 
 <header class="topbar">
-  <a class="brand" href="#">
-    <span class="brand-mark">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <rect x="3" y="5" width="18" height="14" rx="3"/>
-        <path d="m4 7 8 6 8-6"/>
-      </svg>
-    </span>
-    <span class="brand-name">ZAMIN <span>TEMP MAIL</span></span>
-  </a>
-  <nav class="nav">
-    <a href="#generator">Home</a>
-    <a href="#inbox-section">Inbox</a>
-    <a class="nav-join" href="https://t.me/KINGPROFESSORBACK" target="_blank" rel="noopener">Telegram ↗</a>
-  </nav>
+<a class="brand" href="#">
+<span class="brand-mark">✉</span>
+<span class="brand-name">ZAMIN <span>TEMP MAIL</span></span>
+</a>
+<nav class="nav">
+<a href="#generator">Home</a>
+<a href="#inbox-section">Inbox</a>
+<a class="nav-join" href="https://t.me/KINGPROFESSORBACK" target="_blank" rel="noopener">Telegram ↗</a>
+</nav>
 </header>
 
 <section class="hero">
-  <div class="eyebrow"><span class="dot"></span> FREE TEMPORARY EMAIL SERVICE</div>
-  <h1>Temporary Email.<br><span>Instant Privacy.</span></h1>
-  <p>Get a disposable email address in seconds. Receive verification emails and OTP codes without sharing your personal inbox.</p>
+<div class="eyebrow"><span class="dot"></span> FREE TEMPORARY EMAIL SERVICE</div>
+<h1>Temporary Email.<br><span>Instant Privacy.</span></h1>
+<p>Get a disposable email address in seconds. Receive verification emails and OTP codes without sharing your personal inbox.</p>
 </section>
 
 <main class="wrap">
 
 <section class="generator" id="generator">
-  <div class="panel-top">
-    <div class="panel-title">
-      <div class="panel-icon">
-        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-          <rect x="3" y="5" width="18" height="14" rx="3"/>
-          <path d="m4 7 8 6 8-6"/>
-        </svg>
-      </div>
-      <div>
-        <h2>Your Temporary Mailbox</h2>
-        <p>Generate an address and receive messages</p>
-      </div>
-    </div>
-    <div class="live"><span class="dot"></span> READY</div>
-  </div>
+<div class="panel-top">
+<div class="panel-title">
+<div class="panel-icon">✉</div>
+<div><h2>Your Temporary Mailbox</h2><p>Generate an address and receive messages</p></div>
+</div>
+<div class="live"><span class="dot"></span> READY</div>
+</div>
 
-  <div class="mailbox">
-    <div class="mail-label">YOUR EMAIL ADDRESS</div>
-    <div class="mail-line">
-      <div id="email">Generate an email to start</div>
-      <button class="btn btn-copy" onclick="copyEmail()">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <rect x="8" y="8" width="13" height="13" rx="2"/>
-          <path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/>
-        </svg>
-        COPY EMAIL
-      </button>
-    </div>
-  </div>
+<div class="mailbox">
+<div class="mail-label">YOUR EMAIL ADDRESS</div>
+<div class="mail-line">
+<div id="email">Generate an email to start</div>
+<button class="btn btn-copy" onclick="copyEmail()">▣ COPY EMAIL</button>
+</div>
+</div>
 
-  <div class="generator-actions">
-    <button class="btn btn-main" onclick="generateEmail()">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M12 5v14M5 12h14"/>
-      </svg>
-      Generate New Email
-    </button>
-    <button class="btn btn-soft" onclick="refreshInbox()">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M20 7v5h-5M4 17v-5h5"/>
-        <path d="M5.6 9a7 7 0 0 1 11.8-2L20 12M4 12l2.6 5a7 7 0 0 0 11.8-2"/>
-      </svg>
-      Refresh Inbox
-    </button>
-  </div>
-  <div class="status-line">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7h.01"/>
-    </svg>
-    <span id="status">Ready to generate your email.</span>
-  </div>
+<div class="generator-actions">
+<button class="btn btn-main" id="generateBtn" onclick="generateEmail()">＋ Generate New Email</button>
+<button class="btn btn-soft" onclick="refreshInbox()">↻ Refresh Inbox</button>
+</div>
+<div class="status-line"><span>ⓘ</span><span id="status">Ready to generate your email.</span></div>
 </section>
 
 <section class="section" id="inbox-section">
-  <div class="section-head">
-    <div class="section-heading">
-      <div class="heading-icon">
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-          <path d="M4 4h16v16H4z"/><path d="M4 13h4l2 3h4l2-3h4"/>
-        </svg>
-      </div>
-      <div>
-        <h2>Inbox Messages</h2>
-        <p>Your received emails appear here</p>
-      </div>
-    </div>
-    <span class="count" id="count">0 MESSAGES</span>
-  </div>
-  <div id="inbox">
-    <div class="empty">
-      <div class="empty-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-          <path d="M4 4h16v16H4z"/><path d="M4 13h4l2 3h4l2-3h4"/>
-        </svg>
-      </div>
-      Your inbox is waiting for messages.
-    </div>
-  </div>
+<div class="section-head">
+<div class="section-heading">
+<div class="heading-icon">▤</div>
+<div><h2>Inbox Messages</h2><p>Your received emails appear here</p></div>
+</div>
+<span class="count" id="count">0 MESSAGES</span>
+</div>
+<div id="inbox"><div class="empty">Your inbox is waiting for messages.</div></div>
 </section>
 
 <section class="section">
-  <div class="section-head">
-    <div class="section-heading">
-      <div class="heading-icon">
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-          <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
-        </svg>
-      </div>
-      <div>
-        <h2>Recent Email History</h2>
-        <p>Switch between your generated addresses</p>
-      </div>
-    </div>
-  </div>
-  <div id="history" class="history-list">
-    <div class="empty">No email history yet.</div>
-  </div>
+<div class="section-head">
+<div class="section-heading">
+<div class="heading-icon">◷</div>
+<div><h2>Recent Email History</h2><p>Switch between your generated addresses</p></div>
+</div>
+</div>
+<div id="history" class="history-list"><div class="empty">No email history yet.</div></div>
 </section>
 
 <div class="features">
-  <article class="feature">
-    <div class="feature-icon">
-      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-        <path d="M12 3 4 6v5c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z"/>
-        <path d="m9 12 2 2 4-4"/>
-      </svg>
-    </div>
-    <div><h3>Privacy Protection</h3><p>Keep your personal email separate from temporary signups.</p></div>
-  </article>
-  <article class="feature">
-    <div class="feature-icon">
-      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-        <path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/>
-      </svg>
-    </div>
-    <div><h3>Instant Generation</h3><p>Create a temporary email address in just one click.</p></div>
-  </article>
-  <article class="feature">
-    <div class="feature-icon">
-      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-        <path d="M4 5h16v14H4z"/><path d="m4 7 8 6 8-6"/>
-        <path d="M8 16h8"/>
-      </svg>
-    </div>
-    <div><h3>OTP Inbox</h3><p>Check incoming verification emails from your mailbox.</p></div>
-  </article>
+<article class="feature"><div class="feature-icon">♢</div><div><h3>Privacy Protection</h3><p>Keep your personal email separate from temporary signups.</p></div></article>
+<article class="feature"><div class="feature-icon">✚</div><div><h3>Instant Generation</h3><p>Create a temporary email address in just one click.</p></div></article>
+<article class="feature"><div class="feature-icon">✉</div><div><h3>OTP Inbox</h3><p>Check incoming verification emails from your mailbox.</p></div></article>
 </div>
 
 <section class="section">
-  <div class="section-head">
-    <div class="section-heading">
-      <div class="heading-icon">
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-          <circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/>
-        </svg>
-      </div>
-      <div><h2>How It Works</h2><p>Get started in five simple steps</p></div>
-    </div>
-  </div>
-  <div class="steps">
-    <div class="step"><div class="step-number">01</div><p>Generate a new email</p></div>
-    <div class="step"><div class="step-number">02</div><p>Copy your address</p></div>
-    <div class="step"><div class="step-number">03</div><p>Use it for verification</p></div>
-    <div class="step"><div class="step-number">04</div><p>Refresh your inbox</p></div>
-    <div class="step"><div class="step-number">05</div><p>Read your OTP</p></div>
-  </div>
+<div class="section-head"><div class="section-heading"><div class="heading-icon">✓</div>
+<div><h2>How It Works</h2><p>Get started in five simple steps</p></div></div></div>
+<div class="steps">
+<div class="step"><div class="step-number">01</div><p>Generate a new email</p></div>
+<div class="step"><div class="step-number">02</div><p>Copy your address</p></div>
+<div class="step"><div class="step-number">03</div><p>Use it for verification</p></div>
+<div class="step"><div class="step-number">04</div><p>Refresh your inbox</p></div>
+<div class="step"><div class="step-number">05</div><p>Read your OTP</p></div>
+</div>
 </section>
 
 <section class="section">
-  <div class="section-head">
-    <div class="section-heading">
-      <div class="heading-icon">
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-          <circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 4.2 1.8c-1.1 1-1.7 1.2-1.7 2.7M12 17h.01"/>
-        </svg>
-      </div>
-      <div><h2>Frequently Asked Questions</h2><p>Useful information about temporary email</p></div>
-    </div>
-  </div>
-  <details class="faq-item">
-    <summary>What is a temporary email?</summary>
-    <p>A temporary email is a disposable email address that you can use to receive messages without sharing your personal email address.</p>
-  </details>
-  <details class="faq-item">
-    <summary>How do I receive an OTP?</summary>
-    <p>Copy your generated email, use it on the website requesting verification, then refresh your inbox to check for new messages.</p>
-  </details>
-  <details class="faq-item">
-    <summary>Can I use this inbox for private accounts?</summary>
-    <p>No. Temporary inboxes may be publicly accessible to anyone who knows the address. Avoid using them for banking, personal accounts, or sensitive information.</p>
-  </details>
-  <details class="faq-item">
-    <summary>Why is my inbox empty?</summary>
-    <p>The sender may not have sent the message yet, or the service may not support that email provider. Wait a little and refresh your inbox.</p>
-  </details>
+<div class="section-head"><div class="section-heading"><div class="heading-icon">?</div>
+<div><h2>Frequently Asked Questions</h2><p>Useful information about temporary email</p></div></div></div>
+<details class="faq-item"><summary>What is a temporary email?</summary><p>A temporary email is a disposable email address that you can use to receive messages without sharing your personal email address.</p></details>
+<details class="faq-item"><summary>How do I receive an OTP?</summary><p>Copy your generated email, use it on the website requesting verification, then refresh your inbox to check for new messages.</p></details>
+<details class="faq-item"><summary>Can I use this inbox for private accounts?</summary><p>No. Temporary inboxes may be publicly accessible to anyone who knows the address. Avoid using them for banking, personal accounts, or sensitive information.</p></details>
+<details class="faq-item"><summary>Why is my inbox empty?</summary><p>The sender may not have sent the message yet, or the service may not support that email provider. Wait a little and refresh your inbox.</p></details>
 </section>
 
-<section class="telegram" id="channel">
-  <div class="telegram-icon">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-      <path d="m21 3-7 18-4-8-8-4z"/><path d="M21 3 10 13"/>
-    </svg>
-  </div>
-  <h2>Join Our Official Telegram Channel</h2>
-  <p>Stay connected for project updates, announcements and new features from ZAMIN TEMP MAIL.</p>
-  <a href="https://t.me/KINGPROFESSORBACK" target="_blank" rel="noopener">
-    JOIN TELEGRAM CHANNEL
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M7 17 17 7M7 7h10v10"/>
-    </svg>
-  </a>
+<section class="telegram">
+<div class="telegram-icon">➤</div>
+<h2>Join Our Official Telegram Channel</h2>
+<p>Stay connected for project updates, announcements and new features from ZAMIN TEMP MAIL.</p>
+<a href="https://t.me/KINGPROFESSORBACK" target="_blank" rel="noopener">JOIN TELEGRAM CHANNEL ↗</a>
 </section>
 
 </main>
 
 <footer>
-  Developed by <b>ZAMIN THE LEGEND</b><br>
-  <a href="https://t.me/ZAMINTHELEGEND" target="_blank" rel="noopener">Developer Contact</a>
-  <a href="https://t.me/K
+Developed by <b>ZAMIN THE LEGEND</b><br>
+<a href="https://t.me/ZAMINTHELEGEND" target="_blank" rel="noopener">Developer Contact</a>
+<a href="https://t.me/KINGPROFESSORBACK" target="_blank" rel="noopener">Telegram Channel</a>
+</footer>
+
+<div id="toast"></div>
+
+<div id="modal">
+<div class="modalbox">
+<div class="modalhead">
+<h2 id="modalSubject">Message</h2>
+<button class="btn btn-soft" onclick="closeMessage()">CLOSE ✕</button>
+</div>
+<p id="modalFrom" style="font-size:12px;color:#81879b"></p>
+<div id="bodyText"></div>
+<br>
+<button class="btn btn-main" onclick="copyMessage()">COPY MESSAGE</button>
+</div>
+</div>
+
+<script>
+"use strict";
+
+const API = "/api/mail";
+const DOMAIN = "grabmail.io";
+
+let currentEmail = "";
+let messages = [];
+let currentMessageText = "";
+
+function randomEmail(){
+  const chars = "abcdefghijklmnopqrstuvwxyz0123456789";
+  let name = "";
+  for(let i=0;i<14;i++){
+    name += chars[Math.floor(Math.random()*chars.length)];
+  }
+  return name + "@" + DOMAIN;
+}
+
+function getHistory(){
+  try{
+    return JSON.parse(localStorage.getItem("zamin_mail_history") || "[]");
+  }catch(e){
+    return [];
+  }
+}
+
+function saveHistory(email){
+  try{
+    let history = getHistory().filter(x => x !== email);
+    history.unshift(email);
+    localStorage.setItem("zamin_mail_history",JSON.stringify(history.slice(0,30)));
+  }catch(e){}
+}
+
+function setStatus(text){
+  document.getElementById("status").textContent = text;
+}
+
+function showToast(text){
+  const toast = document.getElementById("toast");
+  toast.textContent = text;
+  toast.classList.add("show");
+  clearTimeout(window.toastTimer);
+  window.toastTimer = setTimeout(()=>toast.classList.remove("show"),2400);
+}
+
+function escapeHTML(value){
+  return String(value ?? "").replace(/[&<>"']/g,c=>({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  })[c]);
+}
+
+async function apiRequest(url,options={}){
+  const response = await fetch(url,{
+    ...options,
+    headers:{
+      "Accept":"application/json",
+      ...(options.headers || {})
+    }
+  });
+
+  const text = await response.text();
+  let data;
+
+  try{
+    data = JSON.parse(text);
+  }catch(e){
+    throw new Error("Invalid API response.");
+  }
+
+  if(!response.ok){
+    throw new Error(data.message || data.error || "API request failed.");
+  }
+
+  return data;
+}
+
+function generateEmail(){
+  currentEmail = randomEmail();
+  messages = [];
+
+  document.getElementById("email").textContent = currentEmail;
+  document.getElementById("count").textContent = "0 MESSAGES";
+  document.getElementById("inbox").innerHTML =
+    '<div class="empty">Checking your new inbox...</div>';
+
+  saveHistory(currentEmail);
+  renderHistory();
+
+  setStatus("New email generated. Checking inbox...");
+  refreshInbox();
+}
+
+async function copyEmail(){
+  if(!currentEmail){
+    showToast("Generate an email first.");
+    return;
+  }
+
+  try{
+    await navigator.clipboard.writeText(currentEmail);
+    showToast("Email copied successfully!");
+  }catch(e){
+    showToast("Copy unavailable. Please copy manually.");
+  }
+}
+
+function renderHistory(){
+  const container = document.getElementById("history");
+  const history = getHistory();
+
+  if(!history.length){
+    container.innerHTML = '<div class="empty">No email history yet.</div>';
+    return;
+  }
+
+  container.innerHTML = history.map(email=>`
+    <button class="history-item ${email===currentEmail?"active":""}"
+      onclick="selectEmail('${escapeHTML(email)}')">
+      <span>${escapeHTML(email)}</span>
+      <small>${email===currentEmail?"ACTIVE":"OPEN"}</small>
+    </button>
+  `).join("");
+}
+
+function selectEmail(email){
+  if(!/^[a-z0-9._-]+@grabmail\.io$/i.test(email)) return;
+
+  currentEmail = email;
+  document.getElementById("email").textContent = email;
+  renderHistory();
+  refreshInbox();
+}
+
+async function refreshInbox(){
+  if(!currentEmail){
+    setStatus("Generate an email first.");
+    showToast("Generate an email first.");
+    return;
+  }
+
+  document.getElementById("inbox").innerHTML =
+    '<div class="empty">Refreshing inbox...</div>';
+  setStatus("Checking for new messages...");
+
+  try{
+    const data = await apiRequest(
+      `${API}?action=inbox&address=${encodeURIComponent(currentEmail)}`
+    );
+
+    messages = Array.isArray(data.messages) ? data.messages : [];
+
+    document.getElementById("count").textContent =
+      messages.length + " MESSAGES";
+
+    renderMessages();
+    setStatus(messages.length
+      ? "Inbox updated successfully."
+      : "Inbox is empty. Waiting for new messages.");
+
+  }catch(error){
+    document.getElementById("inbox").innerHTML =
+      `<div class="empty">Inbox error: ${escapeHTML(error.message)}<br>Please try again.</div>`;
+    document.getElementById("count").textContent = "0 MESSAGES";
+    setStatus("Unable to load inbox.");
+  }
+}
+
+function renderMessages(){
+  const inbox = document.getElementById("inbox");
+
+  if(!messages.length){
+    inbox.innerHTML = '<div class="empty">✉<br>No messages received yet.<br>Your new emails will appear here.</div>';
+    return;
+  }
+
+  inbox.innerHTML = messages.map((msg,index)=>`
+    <div class="message">
+      <div class="message-symbol">✉</div>
+      <div class="message-info">
+        <strong>${escapeHTML(msg.subject || "No subject")}</strong>
+        <small>From: ${escapeHTML(msg.from || "Unknown sender")}</small>
+        <small>${escapeHTML(msg.date || "")}</small>
+      </div>
+      <div class="message-actions">
+        <button class="btn btn-main" onclick="readMessage(${index})">READ</button>
+        <button class="btn btn-danger" onclick="deleteMessage(${index})">DELETE</button>
+      </div>
+    </div>
+  `).join("");
+}
+
+async function readMessage(index){
+  const msg = messages[index];
+  if(!msg || !msg.id) return;
+
+  showToast("Loading message...");
+
+  try{
+    const data = await apiRequest(
+      `${API}?action=read&address=${encodeURIComponent(currentEmail)}&id=${encodeURIComponent(msg.id)}`
+    );
+
+    const text = data.text ||
+      (data.html ? data.html.replace(/<[^>]*>/g," ") : "") ||
+      "No message content available.";
+
+    currentMessageText = text;
+
+    document.getElementById("modalSubject").textContent =
+      data.subject || msg.subject || "Email Message";
+
+    document.getElementById("modalFrom").textContent =
+      "From: " + (data.from || msg.from || "Unknown");
+
+    document.getElementById("bodyText").textContent = text;
+    document.getElementById("modal").style.display = "block";
+
+  }catch(error){
+    showToast("Read error: " + error.message);
+  }
+}
+
+function closeMessage(){
+  document.getElementById("modal").style.display = "none";
+}
+
+async function copyMessage(){
+  try{
+    await navigator.clipboard.writeText(currentMessageText);
+    showToast("Message copied!");
+  }catch(e){
+    showToast("Unable to copy message.");
+  }
+}
+
+async function deleteMessage(index){
+  const msg = messages[index];
+  if(!msg || !msg.id) return;
+
+  if(!confirm("Delete this message?")) return;
+
+  try{
+    await apiRequest(
+      `${API}?action=delete&address=${encodeURIComponent(currentEmail)}&id=${encodeURIComponent(msg.id)}`,
+      {method:"DELETE"}
+    );
+
+    showToast("Message deleted.");
+    await refreshInbox();
+
+  }catch(error){
+    showToast("Delete failed: " + error.message);
+  }
+}
+
+renderHistory();
+
+window.generateEmail = generateEmail;
+window.copyEmail = copyEmail;
+window.refreshInbox = refreshInbox;
+window.selectEmail = selectEmail;
+window.readMessage = readMessage;
+window.deleteMessage = deleteMessage;
+window.closeMessage = closeMessage;
+window.copyMessage = copyMessage;
+</script>
+
+</body>
+</html>
