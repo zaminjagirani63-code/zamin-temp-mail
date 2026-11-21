@@ -6,112 +6,142 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#090d1b">
 <title>ZAMIN TEMP MAIL</title>
+
 <style>
-:root{--bg:#090d1b;--panel:#111a2d;--line:#26334d;--text:#f4f7ff;--muted:#9aa9c3;--purple:#895cff;--cyan:#35d9e8}
 *{box-sizing:border-box}
-body{margin:0;background:radial-gradient(circle at 50% -10%,#25204e 0,transparent 42%),var(--bg);color:var(--text);font-family:Arial,sans-serif;min-height:100vh}
-header{padding:22px 16px;text-align:center;border-bottom:1px solid var(--line)}
-.logo{font-size:25px;font-weight:900;letter-spacing:1px}.logo span{color:var(--cyan)}
-header p{color:var(--muted);font-size:13px;margin:8px 0 0}
-main{max-width:850px;margin:28px auto;padding:0 15px}
-.card{background:linear-gradient(145deg,#141e34,#101729);border:1px solid var(--line);border-radius:18px;padding:20px;margin-bottom:17px;box-shadow:0 12px 35px #0003}
+body{margin:0;background:#090d1b;color:#f4f7ff;font-family:Arial,sans-serif}
+header{text-align:center;padding:28px 15px 24px;background:radial-gradient(ellipse at top,#292052,transparent 75%);border-bottom:1px solid #26334d}
+.generator-logo{width:115px;height:115px;filter:drop-shadow(0 0 12px #895cff);animation:float 3s infinite ease-in-out}
+@keyframes float{50%{transform:translateY(-7px)}}
+.brand-name{font-size:clamp(28px,7vw,42px);font-weight:1000;letter-spacing:2px;margin-top:8px}
+.brand-name span{background:linear-gradient(90deg,#35d9e8,#895cff,#f34fa5);background-clip:text;color:transparent}
+.tagline{font-size:11px;color:#aab7d0;letter-spacing:2px;margin-top:8px}
+main{max-width:850px;margin:25px auto;padding:0 15px}
+.card{background:linear-gradient(145deg,#151f35,#101729);border:1px solid #293650;border-radius:18px;padding:20px;margin-bottom:17px;box-shadow:0 12px 35px #0003}
 h2{font-size:17px;margin:0 0 15px}
-.emailbox{display:flex;gap:9px;align-items:center;background:#080f20;border:1px solid #344361;border-radius:12px;padding:12px}
-#email{flex:1;min-width:0;overflow-wrap:anywhere;font-size:15px;font-weight:bold;color:var(--cyan)}
-button{border:0;border-radius:10px;padding:11px 15px;background:var(--purple);color:white;font-weight:bold;cursor:pointer}
-button:disabled{opacity:.5;cursor:wait}
-button.secondary{background:#26344f}
-button.cyan{background:#087f91}
+.emailbox{display:flex;align-items:center;gap:10px;background:#080f20;border:1px solid #344361;border-radius:12px;padding:12px}
+#email{flex:1;min-width:0;overflow-wrap:anywhere;color:#35d9e8;font-weight:bold;font-size:15px}
+button{border:0;border-radius:10px;padding:12px 15px;color:white;font-weight:bold;cursor:pointer}
+button:disabled{opacity:.5}
+.purple{background:linear-gradient(110deg,#7145e8,#a15cff)}
+.cyan{background:linear-gradient(110deg,#087f91,#20bfc9)}
+.pink{background:linear-gradient(110deg,#d63c91,#f16bb2)}
+.dark{background:#263650}
 .actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:13px}
-.status{color:var(--muted);font-size:13px;margin-top:12px;min-height:18px}
+.actions button{flex:1}
+.status{font-size:13px;color:#aab7d0;margin-top:13px;min-height:18px}
+#inbox .empty,.empty{text-align:center;padding:24px 5px;color:#9aa9c3}
+.message{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid #293650}
+.message-info{min-width:0}
+.message-info strong{display:block;overflow-wrap:anywhere}
+.message-info small{display:block;color:#9aa9c3;margin-top:5px}
+.message .actions{margin:0}
+.message button{padding:9px 12px}
 .history{display:flex;flex-direction:column;gap:8px}
-.history button{display:flex;justify-content:space-between;text-align:left;gap:10px;background:#0b1426;border:1px solid var(--line);font-weight:normal}
-.history button.active{border-color:var(--cyan);color:var(--cyan)}
-.history small{color:var(--muted)}
-.message{padding:14px 2px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;align-items:center}
-.message:last-child{border:0}
-.message-info{min-width:0}.message-info strong{display:block;overflow-wrap:anywhere}
-.message-info small{display:block;color:var(--muted);margin-top:5px}
-.message button{padding:9px 12px;white-space:nowrap}
-.empty{text-align:center;color:var(--muted);padding:25px 5px}
-a{color:var(--cyan);text-decoration:none}
-footer{text-align:center;color:var(--muted);font-size:12px;padding:22px}
-footer a{margin:0 8px}
-#modal{display:none;position:fixed;inset:0;background:#000b;z-index:5;padding:18px;overflow:auto}
-.modalbox{max-width:650px;margin:6vh auto;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}
+.history button{display:flex;justify-content:space-between;gap:8px;text-align:left;background:#0b1426;border:1px solid #293650;font-weight:normal}
+.history button.active{border-color:#35d9e8;color:#35d9e8}
+.guide{font-size:14px;line-height:1.8;color:#aab7d0}
+.telegram{text-align:center}
+.telegram a{display:inline-block;text-decoration:none}
+footer{text-align:center;color:#9aa9c3;padding:25px 15px;font-size:12px;line-height:2}
+footer a{color:#35d9e8;text-decoration:none;margin:0 7px}
+#modal{display:none;position:fixed;inset:0;background:#000c;z-index:10;padding:18px;overflow:auto}
+.modalbox{max-width:650px;margin:6vh auto;background:#151f35;border:1px solid #344361;border-radius:16px;padding:20px}
 .modalhead{display:flex;justify-content:space-between;gap:10px;align-items:center}
-#bodyText{white-space:pre-wrap;overflow-wrap:anywhere;background:#080f20;padding:14px;border-radius:10px;line-height:1.6}
-.otp{color:var(--cyan);font-size:22px;font-weight:bold}
-.guide{color:var(--muted);font-size:14px;line-height:1.7}
-@media(max-width:520px){.emailbox{align-items:flex-start;flex-direction:column}.emailbox button{width:100%}.message{align-items:flex-start}.actions button{flex:1}}
+#bodyText{white-space:pre-wrap;overflow-wrap:anywhere;background:#080f20;padding:14px;border-radius:10px;line-height:1.7}
+.otp{color:#35d9e8;font-size:22px;font-weight:bold}
+@media(max-width:520px){.emailbox{flex-wrap:wrap}.emailbox #email{width:100%;flex-basis:100%}.emailbox button{flex:1}.message{align-items:flex-start;flex-direction:column}.message .actions{width:100%}}
 </style>
 </head>
+
 <body>
+
 <header>
-  <div class="logo">ZAMIN <span>TEMP MAIL</span></div>
-  <p>Fast • Free • Temporary Email Inbox</p>
+  <svg class="generator-logo" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="mailGradient" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#35D9E8"/>
+        <stop offset="55%" stop-color="#895CFF"/>
+        <stop offset="100%" stop-color="#F34FA5"/>
+      </linearGradient>
+    </defs>
+    <rect x="13" y="32" width="83" height="65" rx="15" fill="#182744" stroke="url(#mailGradient)" stroke-width="4"/>
+    <path d="M17 42 L54 69 Q56 71 59 69 L92 42" fill="none" stroke="url(#mailGradient)" stroke-width="5" stroke-linecap="round"/>
+    <path d="M17 87 L42 65 M92 87 L69 65" fill="none" stroke="#35D9E8" stroke-width="4" stroke-linecap="round"/>
+    <rect x="57" y="9" width="48" height="35" rx="9" fill="#251D49" stroke="#B18AFF" stroke-width="3"/>
+    <path d="M66 19 H96 M66 26 H87" stroke="white" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="99" cy="17" r="12" fill="#E34B91"/>
+    <path d="M99 11 V23 M93 17 H105" stroke="white" stroke-width="3" stroke-linecap="round"/>
+    <path d="M10 19 L13 11 L16 19 L24 22 L16 25 L13 33 L10 25 L3 22Z" fill="#35D9E8"/>
+  </svg>
+  <div class="brand-name">ZAMIN <span>TEMP MAIL</span></div>
+  <div class="tagline">✦ INSTANT EMAIL GENERATOR ✦</div>
 </header>
 
 <main>
-  <section class="card">
-    <h2>📨 Your Temporary Email</h2>
-    <div class="emailbox">
-      <div id="email">Generate an email to start</div>
-      <button onclick="copyEmail()">📋 Copy</button>
-    </div>
-    <div class="actions">
-      <button onclick="generateEmail()">＋ Generate Email</button>
-      <button class="secondary" onclick="refreshInbox()">↻ Refresh Inbox</button>
-    </div>
-    <div class="status" id="status">Ready to generate your temporary email.</div>
-  </section>
 
-  <section class="card">
-    <h2>📬 Inbox <span id="count" style="color:var(--cyan)">(0)</span></h2>
-    <div id="inbox"><div class="empty">Generate an email to receive messages.</div></div>
-  </section>
+<section class="card">
+  <h2>📨 Your Temporary Email</h2>
+  <div class="emailbox">
+    <div id="email">Generate an email to start</div>
+    <button class="cyan" onclick="copyEmail()">📋 COPY</button>
+  </div>
+  <div class="actions">
+    <button class="purple" onclick="generateEmail()">＋ GENERATE EMAIL</button>
+    <button class="cyan" onclick="refreshInbox()">↻ REFRESH</button>
+  </div>
+  <div class="status" id="status">Ready to generate your email.</div>
+</section>
 
-  <section class="card">
-    <h2>🕘 Email History</h2>
-    <div id="history" class="history"><div class="empty">Your generated emails will appear here.</div></div>
-  </section>
+<section class="card">
+  <h2>📬 INBOX <span id="count" style="color:#35d9e8">(0)</span></h2>
+  <div id="inbox"><div class="empty">📭 Your messages will appear here.</div></div>
+</section>
 
-  <section class="card">
-    <h2>📖 How to Use</h2>
-    <div class="guide">
-      <b>➊</b> Generate Email par click karein.<br>
-      <b>➋</b> Email copy karke website par use karein.<br>
-      <b>➌</b> OTP aane par Refresh Inbox dabayein.<br>
-      <b>➍</b> Message open karke OTP check karein.<br>
-      <b>➎</b> Doosra email chahiye to Generate Email dabayein.
-    </div>
-  </section>
+<section class="card">
+  <h2>🕘 EMAIL HISTORY</h2>
+  <div id="history" class="history"><div class="empty">No email history yet.</div></div>
+</section>
 
-  <section class="card" style="text-align:center">
-    <h2>📢 Join Our Telegram Channel</h2>
-    <p class="guide">Updates aur latest information ke liye channel join karein.</p>
-    <a href="https://t.me/KINGPROFESSORBACK" target="_blank"><button class="cyan">Join Telegram Channel ↗</button></a>
-  </section>
+<section class="card">
+  <h2>📖 HOW TO USE</h2>
+  <div class="guide">
+    <b>➊</b> Generate Email par click karein.<br>
+    <b>➋</b> Email copy karke website par use karein.<br>
+    <b>➌</b> OTP aane par Refresh Inbox dabayein.<br>
+    <b>➍</b> Message open karke OTP dekhein.<br>
+    <b>➎</b> Naya email chahiye to Generate Email dabayein.
+  </div>
+</section>
+
+<section class="card telegram">
+  <h2>📢 JOIN OUR TELEGRAM CHANNEL</h2>
+  <p class="guide">Latest updates aur information ke liye join karein.</p>
+  <a href="https://t.me/KINGPROFESSORBACK" target="_blank">
+    <button class="pink">JOIN TELEGRAM ↗</button>
+  </a>
+</section>
+
 </main>
 
 <footer>
-  Developed by <b>ZAMIN THE LEGEND</b><br><br>
-  <a href="https://t.me/ZAMINTHELEGEND" target="_blank">Developer Contact ↗</a>
-  <a href="https://t.me/KINGPROFESSORBACK" target="_blank">Telegram Channel ↗</a>
-  <p>Temporary inboxes are public. Do not use them for private or sensitive accounts.</p>
+  Developed with ❤️ by <b>ZAMIN THE LEGEND</b><br>
+  <a href="https://t.me/ZAMINTHELEGEND" target="_blank">Developer Contact</a>
+  <a href="https://t.me/KINGPROFESSORBACK" target="_blank">Telegram Channel</a>
+  <p>Public temporary inbox. Do not use for private or sensitive accounts.</p>
 </footer>
 
 <div id="modal" onclick="if(event.target===this)closeMessage()">
   <div class="modalbox">
     <div class="modalhead">
-      <h2 id="modalSubject">Message</h2>
-      <button class="secondary" onclick="closeMessage()">✕ Close</button>
+      <h2 id="modalSubject">Email Message</h2>
+      <button class="dark" onclick="closeMessage()">✕ CLOSE</button>
     </div>
     <p class="guide" id="modalFrom"></p>
     <p class="guide" id="modalDate"></p>
     <div id="bodyText"></div>
     <div class="actions">
-      <button onclick="copyMessage()">📋 Copy Message</button>
+      <button class="purple" onclick="copyMessage()">📋 COPY MESSAGE</button>
     </div>
   </div>
 </div>
@@ -125,16 +155,20 @@ let currentMessageText="";
 function randomEmail(){
   const chars="abcdefghijklmnopqrstuvwxyz0123456789";
   let name="zamin";
-  for(let i=0;i<14;i++) name+=chars[Math.floor(Math.random()*chars.length)];
+  for(let i=0;i<14;i++)name+=chars[Math.floor(Math.random()*chars.length)];
   return name+"@"+DOMAINS[Math.floor(Math.random()*DOMAINS.length)];
 }
 function validEmail(address){
   return /^[a-zA-Z0-9._-]+@(grabmail\.io|mixozia\.com|linqmail\.com)$/i.test(address||"");
 }
 function setStatus(text){document.getElementById("status").textContent=text}
-function getHistory(){try{return JSON.parse(localStorage.getItem("zamin_mail_history")||"[]")}catch{return []}}
-function saveHistory(list){localStorage.setItem("zamin_mail_history",JSON.stringify(list.slice(0,30)))}
-
+function getHistory(){
+  try{return JSON.parse(localStorage.getItem("zamin_mail_history")||"[]")}
+  catch{return []}
+}
+function saveHistory(list){
+  localStorage.setItem("zamin_mail_history",JSON.stringify(list.slice(0,30)));
+}
 function renderHistory(){
   const box=document.getElementById("history");
   const list=getHistory();
@@ -152,17 +186,16 @@ function renderHistory(){
     box.appendChild(btn);
   });
 }
-
 function generateEmail(){
   currentEmail=randomEmail();
   const list=getHistory().filter(x=>x!==currentEmail);
   list.unshift(currentEmail);
   saveHistory(list);
   document.getElementById("email").textContent=currentEmail;
-  document.getElementById("inbox").innerHTML='<div class="empty">Checking your new inbox...</div>';
+  document.getElementById("inbox").innerHTML='<div class="empty">Checking inbox...</div>';
   document.getElementById("count").textContent="(0)";
   renderHistory();
-  setStatus("New email generated. Use it on the website, then refresh your inbox.");
+  setStatus("New email generated. Use it on a website.");
   refreshInbox();
 }
 function selectEmail(address){
@@ -173,9 +206,11 @@ function selectEmail(address){
   refreshInbox();
 }
 async function copyEmail(){
-  if(!currentEmail)return setStatus("Please generate an email first.");
-  try{await navigator.clipboard.writeText(currentEmail);setStatus("Email copied successfully!")}
-  catch{setStatus("Copy failed. Please copy the email manually.")}
+  if(!currentEmail)return setStatus("Generate an email first.");
+  try{
+    await navigator.clipboard.writeText(currentEmail);
+    setStatus("Email copied successfully!");
+  }catch{setStatus("Copy failed. Please copy manually.")}
 }
 async function apiRequest(params,method="GET"){
   const response=await fetch(API+"?"+new URLSearchParams(params),{method});
@@ -191,7 +226,7 @@ async function refreshInbox(){
     const messages=Array.isArray(data.messages)?data.messages:[];
     document.getElementById("count").textContent="("+messages.length+")";
     renderMessages(messages);
-    setStatus(messages.length?"Inbox updated successfully.":"No messages yet. Try refreshing in a little while.");
+    setStatus(messages.length?"Inbox updated successfully.":"No messages yet. Try again shortly.");
   }catch(error){setStatus("Inbox error: "+error.message)}
 }
 function renderMessages(messages){
@@ -199,40 +234,57 @@ function renderMessages(messages){
   box.innerHTML="";
   if(!messages.length){box.innerHTML='<div class="empty">📭 No messages received yet.</div>';return}
   messages.forEach(message=>{
-    const row=document.createElement("div");row.className="message";
-    const info=document.createElement("div");info.className="message-info";
-    const subject=document.createElement("strong");subject.textContent=message.subject||"(No subject)";
-    const sender=document.createElement("small");sender.textContent="From: "+(message.from||"Unknown sender");
-    const date=document.createElement("small");date.textContent=message.date?new Date(message.date).toLocaleString():"";
+    const row=document.createElement("div");
+    row.className="message";
+    const info=document.createElement("div");
+    info.className="message-info";
+    const subject=document.createElement("strong");
+    subject.textContent=message.subject||"(No subject)";
+    const sender=document.createElement("small");
+    sender.textContent="From: "+(message.from||"Unknown sender");
+    const date=document.createElement("small");
+    date.textContent=message.date?new Date(message.date).toLocaleString():"";
     info.append(subject,sender,date);
-    const open=document.createElement("button");open.textContent="Read";
+    const actions=document.createElement("div");
+    actions.className="actions";
+    const open=document.createElement("button");
+    open.className="purple";
+    open.textContent="READ";
     open.onclick=()=>readMessage(message.id);
-    const del=document.createElement("button");del.className="secondary";del.textContent="Delete";
+    const del=document.createElement("button");
+    del.className="dark";
+    del.textContent="DELETE";
     del.onclick=()=>deleteMessage(message.id);
-    const actions=document.createElement("div");actions.className="actions";actions.append(open,del);
-    row.append(info,actions);box.append(row);
+    actions.append(open,del);
+    row.append(info,actions);
+    box.append(row);
   });
 }
 async function readMessage(id){
   try{
     const data=await apiRequest({action:"read",address:currentEmail,id});
-    const body=data.text||stripHtml(data.html||"")||"No message text available.";
-    currentMessageText=body;
+    currentMessageText=data.text||stripHtml(data.html||"")||"No message text available.";
     document.getElementById("modalSubject").textContent=data.subject||"Email Message";
     document.getElementById("modalFrom").textContent="From: "+(data.from||"Unknown");
     document.getElementById("modalDate").textContent=data.date?new Date(data.date).toLocaleString():"";
-    const bodyBox=document.getElementById("bodyText");
-    bodyBox.textContent=body;
-    bodyBox.innerHTML=escapeHtml(body).replace(/\b(\d{4,8})\b/g,'<span class="otp">$1</span>');
+    document.getElementById("bodyText").innerHTML=escapeHtml(currentMessageText).replace(/\b(\d{4,8})\b/g,'<span class="otp">$1</span>');
     document.getElementById("modal").style.display="block";
   }catch(error){setStatus("Read error: "+error.message)}
 }
-function stripHtml(html){const d=document.createElement("div");d.innerHTML=html;return d.textContent||d.innerText||""}
-function escapeHtml(text){return text.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function stripHtml(html){
+  const d=document.createElement("div");
+  d.innerHTML=html;
+  return d.textContent||d.innerText||"";
+}
+function escapeHtml(text){
+  return text.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
 function closeMessage(){document.getElementById("modal").style.display="none"}
 async function copyMessage(){
-  try{await navigator.clipboard.writeText(currentMessageText);setStatus("Message copied!")}
-  catch{setStatus("Could not copy message.")}
+  try{
+    await navigator.clipboard.writeText(currentMessageText);
+    setStatus("Message copied!");
+  }catch{setStatus("Could not copy message.")}
 }
 async function deleteMessage(id){
   if(!confirm("Delete this message?"))return;
@@ -244,8 +296,8 @@ async function deleteMessage(id){
 }
 (function init(){
   const list=getHistory();
-  if(list.length)selectEmail(list[0]);
   renderHistory();
+  if(list.length)selectEmail(list[0]);
 })();
 </script>
 </body>
